@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Date Visited</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% travelDocs.forEach(function(t) { %>
+      <tr>
+        <td><%= t.country %></td>
+        <td><%= t.city %></td>
+        <td><%= t.dateVisited %></td>
+        <td><%= t.kidFriendlyRating %></td>
+        <td><a href="/travels/<%= t._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+<%- include('../partials/footer') %>
