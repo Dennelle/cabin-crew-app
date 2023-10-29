@@ -17,9 +17,7 @@
     <!-- user will be the mongodb document if logged in
     if not the user will be undefined meaning they are not logged in -->
     <% if (user) { %>
-      <a href="/travels">Your Travel Diary</a>
       <a href="/travels/new">Add Travel</a>
-      <a href="/travels/new">Add Activity</a>
       <a href="/logout">logout</a>
      <% } else { %>
       <a href="/auth/google" class="login"> Login&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" width="25" height="25"/> </a>

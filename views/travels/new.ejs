@@ -1,0 +1,49 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/travels" method="POST">
+  <h2>Travel Diary Entry</h2>
+  <br>
+  <label>Country:</label>
+  <input type="text" name="country">
+  <br>
+  <label>City:</label>
+  <input type="text" name="city">
+  <br>
+  <label>Date Visited:</label>
+  <input type="date" name="dateVisited">
+  <br>
+  <label>Date Returned:</label>
+  <input type="date" name="dateReturned">
+  <br>
+  <label>Most Memorable Moments:</label>
+  <br>
+  <textarea name="advice" rows="4" cols="50">Tell us your 3 M's</textarea>
+  <br>
+  <label>Lessons Learned:</label>
+  <br>
+  <textarea name="advice" rows="4" cols="50">What would you do differently?</textarea>
+  <br>
+  <label>Advice:</label>
+  <br>
+  <textarea name="advice" rows="4" cols="50">What advice would you give other parents?</textarea>
+  <br>
+  <label>Number of Children:</label>
+  <input type="number" name="noChildren">
+  <br>
+  <label>Age of Children:</label>
+  <input type="text" name="ageChildren">
+  <br>
+  <label>Kid Friendly Rating</label>
+  <select name="kidFriendlyRating">
+    <option value="4">G</option>
+    <option value="3">PG</option>
+    <option value="2">PG-13</option>
+    <option value="1">R</option>
+  </select>
+  <br>
+  <label>Would Go Again?:</label>
+  <input type="checkbox" name="nowShowing" checked>
+  <input type="submit" value="Enter in Diary">
+</form>
+
+<%- include('../partials/footer') %>

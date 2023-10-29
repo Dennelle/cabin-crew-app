@@ -2,7 +2,8 @@ const Travel = require('../models/travel');
 
 module.exports = {
     index,
-    create
+    create,
+    new: newTravels
 };
 
 async function index(req, res){
@@ -22,5 +23,8 @@ async function create(req, res, next) {
         res.send(err)
 
     }
-
 };
+
+function newTravels(req, res) {
+    res.render('travels/new');
+  }

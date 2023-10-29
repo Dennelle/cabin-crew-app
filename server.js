@@ -11,6 +11,7 @@ const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const travelsRouter = require('./routes/travels');
+const commentsRouter = require('./routes/comments')
 
 // create the Express app
 const app = express();
@@ -56,6 +57,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 app.use('/travels', travelsRouter);
+app.use('/comments', commentsRouter);
 
 
 // invalid request, send 404 page
