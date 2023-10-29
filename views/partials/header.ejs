@@ -12,15 +12,12 @@
 <body>
   <nav>
     <!-- <img src="/images/camera.svg"> -->
-    <a href="/travels">Travel Diaries</a>
-    <!-- user comes from res.locals.user = req.user in the server.js file!!!!!!! -->
-    <!-- user will be the mongodb document if logged in
-    if not the user will be undefined meaning they are not logged in -->
     <% if (user) { %>
+      <a href="/travels">Travel Diaries</a>
       <a href="/travels/new">Add Travel</a>
-      <a href="/logout">logout</a>
+      <a href="/logout">Logout</a>
      <% } else { %>
-      <a href="/auth/google" class="login"> Login&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" width="25" height="25"/> </a>
+      <a href="/auth/google" class="login"> Login&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" width="25" height="25"/></a>
      <% } %>
   </nav>
   <main>

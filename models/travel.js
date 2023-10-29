@@ -16,9 +16,8 @@ const travelSchema = new mongoose.Schema(
      noChildren: Number,
      ageChildren: String,
      kidFriendlyRating: {
-        type: Number,
-        min: 1,
-        max: 5
+        type: String,
+        enum: ['G', 'PG', 'PG-13', 'R']
      }
    });
 

@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 <h1>Welcome to Cabin Crew</h1>
+<h2>See Where the Crew Traveled To</h2>
   <!-- <p>Introducing Cabin Crew, the ultimate web application for adventurous parents who love exploring the world with their children and want to share those unforgettable moments with a like-minded community. Cabin Crew is your personal travel diary, a digital haven where you can capture and immortalize your family's travel experiences, complete with photos, stories, and tips. But it's not just about your adventures; it's also a place to connect and engage with other parents, reading their travel diaries, leaving comments, and building a global network of fellow explorers. Dive into a world of inspiration, discover new destinations, and ignite your wanderlust as you explore the captivating stories shared by our passionate community of parents.</p>
 
   <p>Join Cabin Crew today and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p> -->
@@ -10,6 +11,7 @@
       <th>City</th>
       <th>Date Visited</th>
       <th> Kid Friendly Rating</th>
+      <th> More Information</th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +21,7 @@
         <td><%= t.city %></td>
         <td><%= t.dateVisited %></td>
         <td><%= t.kidFriendlyRating %></td>
-        <td><a href="/travels/<%= t._id %>">DETAILS</a></td>
+        <td><a href="/travels/<%= t._id %>">details</a></td>
       </tr>
       <% }); %>
     </tbody>
