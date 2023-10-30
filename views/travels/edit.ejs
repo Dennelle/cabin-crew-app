@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+<h1>Welcome to Cabin Crew</h1>
+<h2>Where You've Landed!</h2>
+
+<tbody>
+    <% travelDocs.forEach(function(travel) { %>
+      <tr>
+        <!-- // referrerpolicy we neecd to add this so google lets us use the avatar image -->
+        <td class="comment-user"><img alt="avatar" src="<%= travel.userAvatar %>" referrerpolicy="no-referrer" ><%= travel.userName %></td>
+        <div>Name: <%= travel.user %> </div>
+    <div>Image: <%= travel.userAvatar %> </div>
+    <br>
+    <div>Country: <%= travel.country %> </div>
+    <div>City: <%= travel.city %></div>
+    <div>Date Visited: <%= travel.dateVisited %> </div>
+    <div> Date Returned: <%= travel.dateReturned %> </div>
+    <div>Most Memorable Moments: <%= travel.memorableMoments %> </div>
+    <div> Lessons Learned: <%= travel.lessonsLearned %> </div>
+    <div> Advice: <%= travel.advice %> </div>
+    <div> Number of Children: <%= travel.noChildren %> </div>
+    <div> Age of Children: <%= travel.ageChildren %> </div>
+    <div> Kid Friendly Rating: <%= travel.kidFriendlyRating %> </div>
+        <td><% if (user && user._id.equals(travel.user)) { %>
+            <form action="/comments/<%= travel._id %>?_method=DELETE" method="POST">
+              <button type="Submit">Edit</button>
+            </form>
+          <% } %>
+        </td>
+      </tr>
+    <% }); %>
+
+<%- include('../partials/footer') %>

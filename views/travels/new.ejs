@@ -1,5 +1,8 @@
 <%- include('../partials/header') %>
 
+<a href="/travels">Update Travel</a>
+<a href="/travels">Delete Travel</a>
+
 <form id="new-form" action="/travels" method="POST">
   <h2>Travel Diary Entry</h2>
   <br>
@@ -42,8 +45,13 @@
   </select>
   <br>
   <label>Would Go Again?:</label>
-  <input type="checkbox" name="nowShowing" checked>
-  <input type="submit" value="Enter in Diary">
+  <select name="futureVisit">
+    <option value ="Yes">Yes</option>
+    <option value ="No">No</option>
+    <option value="Undecided">Undecided</option>
+    <br>
+    <input type="submit" value="Submit">
+</select>
 </form>
 
 <%- include('../partials/footer') %>

@@ -16,6 +16,7 @@
     <div> Age of Children: <%= travel.ageChildren %> </div>
     <div> Kid Friendly Rating: <%= travel.kidFriendlyRating %> </div>
 </section>
+
 <% } else { %>
     <h3>Please login to see travel diaries</h3>
 <% } %>
@@ -49,25 +50,21 @@
       <tr>
         <th>User</th>
         <th>Comment</th>
-        <th>Plan to Visit:</th>
+        <th>Will <br> visit:</th>
+        <th></th>
       </tr>
     </thead>
 
     <tbody>
-      <% let total = 0 %>
       <% travel.comments.forEach(function(c) { %>
-        <% total += c.rating %>
         <tr>
           <!-- // referrerpolicy we neecd to add this so google lets us use the avatar image -->
           <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
           <td><%= c.content %></td>
           <td><%= c.futureVisit %></td>
-          <td>
-            <!-- first checking to see if the user exist (if user)
-            then check to see if user._id is equal to comments user id (r.user) -->
-            <% if (user && user._id.equals(c.user)) { %>
+          <td><% if (user && user._id.equals(c.user)) { %>
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="Submit">X</button>
+                <button type="Submit">Remove Comment</button>
               </form>
             <% } %>
           </td>
