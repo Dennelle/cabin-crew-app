@@ -1,0 +1,84 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Country: </div>
+    <div><%= travel.country %></div>
+    <div>City: </div>
+    <div><%= travel.city %></div>
+    <div>Date Visited: </div>
+    <div><%= travel.dateVisited %></div>
+    <div> Date Returned: </div>
+    <div><% travel.dateReturned %></div>
+    <div>Most Memorable Moments: </div>
+    <div><% travel.memorableMoments %></div>
+    <div> Lessons Learned: </div>
+    <div><% travel.lessonsLearned %></div>
+    <div> Advice: </div>
+    <div><% travel.advice %></div>
+    <div> Number of Children: </div>
+    <div><% travel.noChildren %></div>
+    <div> Age of Children: </div>
+    <div><% travel.ageChildren %></div>
+    <div> Kid Friendly Rating </div>
+    <div><% travel.kidFriendlyRating %></div>
+</section>
+
+<br><br>
+<h2>Comment</h2>
+
+    <!-- user comes from res.locals.user = req.user in the server.js file!!!!!!! -->
+    <!-- user will be the mongodb document if logged in
+    if not the user will be undefined meaning they are not logged in -->
+<% if (user) { %>
+  <form id="add-review-form" method="POST" action="/travels/<%= travel._id %>/comments">
+    <label>Add Comment:</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Review">
+  </form>
+
+<% } else { %>
+  <h3>Please login to leave a comment</h3>
+<% } %>
+
+
+<% if (travel.comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% travel.comments.forEach(function(r) { %>
+        <% total += r.rating %>
+        <tr>
+          <!-- // referrerpolicy we neecd to add this so google lets us use the avatar image -->
+          <td class="comment-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+          <td><%= r.content %></td>
+          <td><%= r.futureVisit %></td>
+          <td>
+            <!-- first checking to see if the user exist (if user)
+            then check to see if user._id is equal to comments user id (r.user) -->
+            <% if (user && user._id.equals(r.user)) { %>
+              <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="Submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="2"></td>
+        <td><strong><%= (total / travel.comments.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Comments Yet</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>

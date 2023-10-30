@@ -2,7 +2,7 @@ const Travel = require('../models/travel');
 
 module.exports = {
     create,
-    deleteReview
+    deleteComment
   };
 
   async function create(req, res) {
@@ -21,25 +21,22 @@ module.exports = {
     }
   };
 
-  async function deleteReview(req, res){
-    try{
-        const travelDoc = await Travel.findByIdAndRemove(id, _id)
-        const commentDoc = travelDoc.comments.id(req.params.id)
-        await travelDoc.save()
-        res.redirect(`/travels/${travelDoc._id}`)
+  async function deleteComment(req, res) {
+    try {
+        const travelDoc = await Travel.findOne({
+          "comments._id": req.params.id,
+          "comments.user": req.user._id
+        });
 
-        // const travelDoc = await Travel.findOne({
-        //     "comments._id": req.params.id,  //<< searching the reviews array for a matching id!
-        //     "comments.user": req.user._id
-        //   });
-        //   console.log(movieDoc)
-        //   travelDoc.comments.remove(req.params.id);
-        //   // if you wanted to find a review
-        //   const reviewDoc = movieDoc.reviews.id(req.params.id)
-        //   await movieDoc.save()
-        //   res.redirect(`/movies/${movieDoc._id}`)
+        travelDoc.comments.remove(req.params.id)
+
+        const commentDoc = travelDoc.comments.id(req.params.id)
+
+        await travelDoc.save()
+
+        res.redirect(`/travel/${travelDoc._id}`)
 
     } catch (err) {
-        res.send(err)
+      res.send(err)
     }
-  }
+  };

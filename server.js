@@ -57,7 +57,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 app.use('/travels', travelsRouter);
-app.use('/comments', commentsRouter);
+app.use('/', commentsRouter);
+
 
 
 // invalid request, send 404 page
