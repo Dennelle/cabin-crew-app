@@ -55,7 +55,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
-
 app.use('/travels', travelsRouter);
 app.use('/', commentsRouter);
 
