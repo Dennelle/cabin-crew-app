@@ -34,7 +34,7 @@ module.exports = {
 
         await travelDoc.save()
 
-        res.redirect(`/travel/${travelDoc._id}`)
+        res.redirect(`/travels/${travelDoc._id}`)
 
     } catch (err) {
       res.send(err)
