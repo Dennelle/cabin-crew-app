@@ -13,13 +13,14 @@
   <nav>
     <!-- <img src="/images/camera.svg"> -->
     <% if (user) { %>
-      <a href="/travels/new">Your Travel Diary</a>
-      <a href="/travels">Travel Diaries</a>
+      <a href="/">Home</a>
+      <a href="/travels/new">Add Travel</a>
+      <a href="/travels">Read Travel Diaries</a>
       <a href="/logout">Logout</a>
-      <img src="https://i.imgur.com/i7gEEIC.jpg" alt="kid luggage" class="center">
+      <!-- <img src="https://i.imgur.com/i7gEEIC.jpg" alt="kid luggage" class="center"> -->
      <% } else { %>
       <a href="/auth/google" class="login">Login</a>
-      <img src="https://i.imgur.com/BYnAj69.png" alt="kid luggage" class="center">
+      <!-- <img src="https://i.imgur.com/BYnAj69.png" alt="kid luggage" class="center"> -->
       <% } %>
   </nav>
   <main>

@@ -9,7 +9,8 @@ const commentSchema = new mongoose.Schema(
      },
      futureVisit: {
          type: String,
-         enum: ['Yes', 'No', 'Undecided']
+         enum: ['Yes', 'No', 'Undecided'],
+         required: true,
       },
      user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
      userName: String,
