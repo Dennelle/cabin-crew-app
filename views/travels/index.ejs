@@ -1,14 +1,37 @@
 <%- include('../partials/header') %>
-<h1>Welcome to Cabin Crew</h1>
-<h2>Where We've Landed!</h2>
-  <!-- <p>Introducing Cabin Crew, the ultimate web application for adventurous parents who love exploring the world with their children and want to share those unforgettable moments with a like-minded community. Cabin Crew is your personal travel diary, a digital haven where you can capture and immortalize your family's travel experiences, complete with photos, stories, and tips. But it's not just about your adventures; it's also a place to connect and engage with other parents, reading their travel diaries, leaving comments, and building a global network of fellow explorers. Dive into a world of inspiration, discover new destinations, and ignite your wanderlust as you explore the captivating stories shared by our passionate community of parents.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cabin Crew</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-  <p>Join Cabin Crew today and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p> -->
+<div class="jumbotron text-center">
+  <h1>Cabin Crew</h1>
+  <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
+</div>
+
+
+<body>
+<h1></h1>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<h1 class ="text-center">Welcome to Cabin Crew</h1>
+<h2 class ="text-center">Where We've Landed!</h2>
+
+<div class="container">
   <% if (travelDocs.length) { %>
   <table id="list" class="results">
+
+  <div class="table-responsive">
+  <table class="table">
   <thead>
     <tr>
       <th>User</th>
+      <th>Date Traveled</th>
       <th>Country</th>
       <th>City</th>
       <th> KF Rating</th>
@@ -20,8 +43,10 @@
   </thead>
   <tbody>
     <% travelDocs.forEach(function(t) { %>
+      <% let newDate = t.dateVisited.toLocaleDateString() %>
       <tr>
-        <td><%= t.userName %></td>
+        <td class="user"><img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" class="img-rounded"><%= t.userName %></td>
+        <td><%= newDate %></td></td>
         <td><%= t.country %></td>
         <td><%= t.city %></td>
         <td><%= t.kidFriendlyRating %></td>
@@ -42,5 +67,8 @@
  <% } else {%>
     <h5>No Travel Reviews</h5>
     <% } %>
+  </div>
 
-    <%- include('../partials/footer') %>
+  </body>
+  </html>
+  <%- include('../partials/footer') %>

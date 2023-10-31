@@ -1,4 +1,20 @@
 <%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cabin Crew</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<div class="jumbotron text-center" background-image = >
+  <h1>Cabin Crew</h1>
+  <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
+</div>
+
 
 <% if (user) {%>
 <section id="show-page">
@@ -59,7 +75,7 @@
       <% travel.comments.forEach(function(c) { %>
         <tr>
           <!-- // referrerpolicy we neecd to add this so google lets us use the avatar image -->
-          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" class="img-circle" ><%= c.userName %></td>
           <td><%= c.content %></td>
           <td><%= c.futureVisit %></td>
           <td><% if (user && user._id.equals(c.user)) { %>
