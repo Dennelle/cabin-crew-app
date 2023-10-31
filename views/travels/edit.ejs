@@ -3,7 +3,7 @@
 <h2>Where You've Landed!</h2>
 
 <tbody>
-    <% travelDocs.forEach(function(travel) { %>
+//add a form
       <tr>
         <!-- // referrerpolicy we neecd to add this so google lets us use the avatar image -->
         <td class="comment-user"><img alt="avatar" src="<%= travel.userAvatar %>" referrerpolicy="no-referrer" ><%= travel.userName %></td>
@@ -20,13 +20,5 @@
     <div> Number of Children: <%= travel.noChildren %> </div>
     <div> Age of Children: <%= travel.ageChildren %> </div>
     <div> Kid Friendly Rating: <%= travel.kidFriendlyRating %> </div>
-        <td><% if (user && user._id.equals(travel.user)) { %>
-            <form action="/comments/<%= travel._id %>?_method=DELETE" method="POST">
-              <button type="Submit">Edit</button>
-            </form>
-          <% } %>
-        </td>
-      </tr>
-    <% }); %>
 
 <%- include('../partials/footer') %>

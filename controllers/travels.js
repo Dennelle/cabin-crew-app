@@ -33,21 +33,20 @@ async function index(req, res){
 };
 
 async function edit(req, res) {
-    const travel = await Travel.findOne({_id: req.params.id, userExperience: req.user._id});
-    if (!travel) return res.redirect('/travels');
+    const travel = await Travel.findOne({_id: req.params.id, user: req.user._id});
     res.render('travels/edit', { travel });
   }
 
   async function update(req, res) {
     try {
-      const updatedTravel = await Travel.findOneAndUpdate(
-        {_id: req.params.id, userExperience: req.user._id},
+      const updateTravel = await Travel.findOneAndUpdate(
+        {_id: req.params.id, user: req.user._id},
         // update object with updated properties
         req.body,
         // options object {new: true} returns updated doc
         {new: true}
       );
-      return res.redirect(`/travels/${updatedTravel._id}`);
+      return res.redirect(`/travels/${updateTravel._id}`);
     } catch (e) {
       console.log(e.message);
       return res.redirect('/travels');
@@ -80,12 +79,12 @@ async function deleteTravel(req, res) {
    res.redirect('/travels');
 }
 
-async function allTravels(req, res) {
-    let travelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-    const travels = await Travel.find(travelQuery);
-    // Why not reuse the books/index template?
-    res.render('travels/index', {
-      travels,
-      nameSearch: req.query.name  // use to set content of search form
-    });
-  }
+// async function allTravels(req, res) {
+//     let travelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
+//     const travels = await Travel.find(travelQuery);
+//     // Why not reuse the books/index template?
+//     res.render('travels/index', {
+//       travels,
+//       nameSearch: req.query.name  // use to set content of search form
+//     });
+//   }
