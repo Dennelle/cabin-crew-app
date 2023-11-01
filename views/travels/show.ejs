@@ -10,17 +10,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<div class="jumbotron text-center" background-image = >
+<div class="jumbotron text-center">
   <h1>Cabin Crew</h1>
   <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
 </div>
 
-
+<div class="container">
 <% if (user) {%>
-<section id="show-page">
-    <div>Name: <%= travel.user %> </div>
+<section id="show-page" class="toast show">
+  <div class="toast-header">
+    Travel Review
+  </div>
+    <div class="toast-body">Name: <%= travel.userName %> </div>
     <div>Image: <%= travel.userAvatar %> </div>
-    <br>
     <div>Country: <%= travel.country %> </div>
     <div>City: <%= travel.city %></div>
     <div>Date Visited: <%= travel.dateVisited %> </div>
@@ -37,12 +39,16 @@
     <h3>Please login to see travel diaries</h3>
 <% } %>
 <br>
+
+
+
 <h2>Comments</h2>
 <br>
 <br>
 <% if (user) { %>
   <form id="add-comment-form" method="POST" action="/travels/<%= travel._id %>/comments">
-    <label>Add Comment:</label>
+    <div class="mb-3 mt-3">
+      <label for="comment" class="form-label">Add Comment:</label>
     <br>
     <textarea name="content"></textarea>
     <br>
@@ -53,20 +59,23 @@
         <option value="Undecided">Undecided</option>
     </select>
     <br>
-    <input type="submit" value="Add Comment">
+    <button type="Submit" button type="button" class="btn btn-info">Add Comment</button>
   </form>
 <% } else { %>
   <h3>Please login to leave a comment</h3>
 <% } %>
+</div>
 
 
-<% if (travel.comments.length) { %>
-  <table>
+<% if (travel.comments.length, user) { %>
+  <table id="list" class="results">
+    <div class="table-responsive">
+    <table class="table table-striped">
     <thead>
       <tr>
         <th>User</th>
         <th>Comment</th>
-        <th>Will <br> visit:</th>
+        <th>Plan to Visit:</th>
         <th></th>
       </tr>
     </thead>
@@ -75,12 +84,12 @@
       <% travel.comments.forEach(function(c) { %>
         <tr>
           <!-- // referrerpolicy we neecd to add this so google lets us use the avatar image -->
-          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" class="img-circle" ><%= c.userName %></td>
+          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" class="img-circle"><%= c.userName %></td>
           <td><%= c.content %></td>
           <td><%= c.futureVisit %></td>
           <td><% if (user && user._id.equals(c.user)) { %>
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="Submit">Remove Comment</button>
+                <button type="Submit" button type="button" class="btn btn-info">Remove Comment</button>
               </form>
             <% } %>
           </td>

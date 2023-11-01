@@ -8,59 +8,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-
-<div class="jumbotron text-center" background-image = >
+  <div class="jumbotron text-center">
   <h1>Cabin Crew</h1>
   <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
-</div>
-</head>
+  </div>
+  </head>
+
  <% if (user) { %>
-<h2 id="about" class="text-center">Welcome Back!</h2>
+<h2 class="text-center">Welcome Back!</h2>
 <% } else { %>
-<h2>Oops....We can't take off unless you're signed in</h2>
+<h2 class="text-center">Oops....You can't take off unless you're signed in</h2>
 <% } %>
 
-    <p>Welcome to Cabin Crew, the ultimate web application for adventurous parents who love exploring the world with their children and want to share those unforgettable moments with a like-minded community. Cabin Crew is your personal travel diary, a digital haven where you can capture and immortalize your family's travel experiences, complete with photos, stories, and tips. But it's not just about your adventures; it's also a place to connect and engage with other parents, reading their travel diaries, leaving comments, and building a global network of fellow explorers. Dive into a world of inspiration, discover new destinations, and ignite your wanderlust as you explore the captivating stories shared by our passionate community of parents.</p>
+<p class="container">Welcome to Cabin Crew, the ultimate web application for adventurous parents who love exploring the world with their children and want to share those unforgettable moments with a like-minded community. Cabin Crew is your personal travel diary, a digital haven where you can capture and immortalize your family's travel experiences, complete with photos, stories, and tips. But it's not just about your adventures; it's also a place to connect and engage with other parents, reading their travel diaries, leaving comments, and building a global network of fellow explorers. Dive into a world of inspiration, discover new destinations, and ignite your wanderlust as you explore the captivating stories shared by our passionate community of parents.</p>
+<p class="text-center">Join Cabin Crew Community today and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
 
-    <p>Join Cabin Crew today and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
-
-    <script>
-      $(document).ready(function(){
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-          // Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 900, function(){
-
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            });
-          } // End if
-        });
-
-        $(window).scroll(function() {
-          $(".slideanim").each(function(){
-            var pos = $(this).offset().top;
-
-            var winTop = $(window).scrollTop();
-              if (pos < winTop + 600) {
-                $(this).addClass("slide");
-              }
-          });
-        });
-      })
-      </script>
 </body>
 </html>
 <%- include('../views/partials/footer') %>

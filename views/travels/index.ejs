@@ -8,18 +8,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <div class="jumbotron text-center">
+    <h1>Cabin Crew</h1>
+    <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
+  </div>
 </head>
 
-<div class="jumbotron text-center">
-  <h1>Cabin Crew</h1>
-  <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
-</div>
 
 
-<body>
-<h1></h1>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<h1 class ="text-center">Welcome to Cabin Crew</h1>
+
 <h2 class ="text-center">Where We've Landed!</h2>
 
 <div class="container">
@@ -27,7 +24,7 @@
   <table id="list" class="results">
 
   <div class="table-responsive">
-  <table class="table">
+  <table class="table table-striped">
   <thead>
     <tr>
       <th>User</th>
@@ -46,7 +43,7 @@
       <% let newDate = t.dateVisited.toLocaleDateString() %>
       <tr>
         <td class="user"><img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" class="img-rounded"><%= t.userName %></td>
-        <td><%= newDate %></td></td>
+        <td><%= newDate %></td>
         <td><%= t.country %></td>
         <td><%= t.city %></td>
         <td><%= t.kidFriendlyRating %></td>
