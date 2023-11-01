@@ -6,22 +6,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    </style>
 </head>
-
-<div class="jumbotron text-center">
-  <h1>Cabin Crew</h1>
-  <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
-</div>
 
 <div class="container">
 <% if (user) {%>
-<section id="show-page" class="toast show">
-  <div class="toast-header">
-    Travel Review
-  </div>
-    <div class="toast-body">Name: <%= travel.userName %> </div>
+  <h3 class="text-center">Travel Review</h3>
+    <div>Name: <%= travel.userName %> </div>
     <div>Image: <%= travel.userAvatar %> </div>
     <div>Country: <%= travel.country %> </div>
     <div>City: <%= travel.city %></div>
@@ -33,8 +29,6 @@
     <div> Number of Children: <%= travel.noChildren %> </div>
     <div> Age of Children: <%= travel.ageChildren %> </div>
     <div> Kid Friendly Rating: <%= travel.kidFriendlyRating %> </div>
-</section>
-
 <% } else { %>
     <h3>Please login to see travel diaries</h3>
 <% } %>
@@ -42,7 +36,7 @@
 
 
 
-<h2>Comments</h2>
+<h3 class="text-center">Comments</h3>
 <br>
 <br>
 <% if (user) { %>
@@ -50,7 +44,7 @@
     <div class="mb-3 mt-3">
       <label for="comment" class="form-label">Add Comment:</label>
     <br>
-    <textarea name="content"></textarea>
+    <textarea name="content" class="form-control" rows="5" id="comment"></textarea>
     <br>
     <label>Plan To Visit?:</label>
     <select name="futureVisit">
@@ -65,6 +59,7 @@
   <h3>Please login to leave a comment</h3>
 <% } %>
 </div>
+
 
 
 <% if (travel.comments.length, user) { %>

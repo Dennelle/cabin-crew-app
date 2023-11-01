@@ -5,10 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    </style>
+    
+  <div class="jumbotron text-center">
+  <h1>Cabin Crew</h1>
+  <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
+</div>
 </head>
-
 
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -19,20 +27,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Logo</a>
+        <a class="navbar-brand" href="/">Home</a>
         <a class="navbar-brand" href="/auth/google">Login</a>
+
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <% if (user) { %>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/travels/new">Add Travel</a></li>
-          <li><a href="/travels">Read Travel Diaries</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <a class="navbar-brand" href="/travels/new">Travel Diary</a>
+          <a class="navbar-brand" href="/travels">Travel Diaries</a>
+          <a class="navbar-brand" href="/logout">Logout</a>
+            </div>
           <% } else { %>
             <!-- <a class="navbar-brand" href="/auth/google">Login</a> -->
             <% } %>
         </nav>
-        </ul>
       </div>
     </div>
   </nav>
+  </body>

@@ -6,15 +6,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <div class="jumbotron text-center">
-    <h1>Cabin Crew</h1>
-    <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
-  </div>
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    </style>
 </head>
-
-
 
 
 <h2 class ="text-center">Where We've Landed!</h2>
@@ -42,18 +40,18 @@
     <% travelDocs.forEach(function(t) { %>
       <% let newDate = t.dateVisited.toLocaleDateString() %>
       <tr>
-        <td class="user"><img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" class="img-rounded"><%= t.userName %></td>
+        <td class="user"><img alt="avatar" src="<%= t.user.avatar %>" referrerpolicy="no-referrer" class="img-rounded"></td>
         <td><%= newDate %></td>
         <td><%= t.country %></td>
         <td><%= t.city %></td>
         <td><%= t.kidFriendlyRating %></td>
-        <td><button><a href="/travels/<%= t._id %>">details</a></td></button>
-        <td><% if (user && user._id.equals(t.user)) { %><button><a href="/travels/<%= t._id %>/edit">modify</a></button>
+        <td><button type="button" class="btn btn-outline-primary"><a href="/travels/<%= t._id %>">details</a></td></button>
+        <td><% if (user && user._id.equals(t.user._id)) { %><button type="button" class="btn btn-outline-primary" ><a href="/travels/<%= t._id %>/edit">modify</a></button>
           <% } %>
         </td>
-        <td><% if (user && user._id.equals(t.user)) { %>
+        <td><% if (user && user._id.equals(t.user._id)) { %>
         <form action="/travels/<%= t._id %>?_method=DELETE" method="POST">
-        <button type="Submit">remove</button>
+        <button type="Submit" button type="button" class="btn btn-info">remove</button>
         </form>
            <% } %>
            </td>

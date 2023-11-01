@@ -25,7 +25,8 @@ async function show(req, res){
 async function index(req, res){
     try{
         console.log("REQ USER", req.user )
-        const travelDocuments = await Travel.find({});
+        const travelDocuments = await Travel.find({})
+        .populate("user")
         console.log(travelDocuments)
         res.render('travels/index', { travelDocs: travelDocuments });
     } catch (err) {

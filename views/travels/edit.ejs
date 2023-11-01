@@ -6,58 +6,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    </style>
 </head>
 
-<div class="jumbotron text-center" background-image = >
-  <h1>Cabin Crew</h1>
-  <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
-</div>
-</head>
-
-  <form action="/travels/<%= travel._id %>?_method=PUT" method="POST">
+  <form class= "container" action="/travels/<%= travel._id %>?_method=PUT" method="POST">
     <div>Name: <%= travel.user %> </div>
     <div>Image: <%= travel.userAvatar %> </div>
     <br>
-    <h2>Make Changes Here</h2>
+    <h2>Edit Your Journey Here:</h2>
     <label>Country:</label>
     <br>
-    <textarea name="country" ><%= travel.country %></textarea>
+    <textarea class="form-control" rows="1" id="comment" name="country" ><%= travel.country %></textarea>
     <br>
     <label>City:</label>
     <br>
-    <textarea type="text" name="city" value=""><%= travel.city %></textarea>
+    <textarea class="form-control" rows="1" id="comment" name="city" value=""><%= travel.city %></textarea>
     <br>
-    <!-- <label>Date Visited:
-    <input type="date" name="dateVisited"><%= travel.dateVisited %>
+    <label>Date Visited:
+    <input type="datetime-local" name="dateVisited" value="<%= travel.dateVisited.toISOString().slice(0,16) %>">
     <br>
     <div>Date Returned:
-    <input type="date" name="dateVisited"><%= travel.dateReturned %>
-    <br> -->
+    <input type="datetime-local" name="dateReturned" value="<%= travel.dateReturned.toISOString().slice(0,16) %>">
+    <br>
     <div>Most Memorable Moments:</div>
-    <textarea type="text" name="memorableMoments" value=""><%= travel.memorableMoments %></textarea>
+    <textarea class="form-control" rows="5" id="comment" name="memorableMoments" value=""><%= travel.memorableMoments %></textarea>
     <br>
     <div>Lessons Learned:</div>
-    <textarea type="text" name="lessonsLearned" value=""><%= travel.lessonsLearned %></textarea>
+    <textarea class="form-control" rows="5" id="comment" name="lessonsLearned" value=""><%= travel.lessonsLearned %></textarea>
     <br>
     <div>Advice:</div>
-    <textarea type="text" name="advice" value=""><%= travel.advice %></textarea>
+    <textarea class="form-control" rows="5" id="comment" name="advice" value=""><%= travel.advice %></textarea>
     <br>
     <div>Number of Children:</div>
-    <textarea type="number" name="noChildren" value=""><%= travel.noChildren %></textarea>
+    <textarea type="number" class="form-control" rows="1" id="comment" name="noChildren" value=""><%= travel.noChildren %></textarea>
     <br>
     <div>Age of Children:</div>
-    <textarea type="text" name="ageChildren" value=""><%= travel.ageChildren %></textarea>
+    <textarea type="text" class="form-control" rows="1" id="comment" name="ageChildren" value=""><%= travel.ageChildren %></textarea>
     <br>
     <label for="kidFriendlyRating">Select Kid Friendly Rating:</label>
-    <select id="kidFriendlyRating" name="kidFriendlyRating">
+    <select class="form-control" rows="1" id="kidFriendlyRating" name="kidFriendlyRating">
       <option value ='G'>G</option>
       <option value ='PG'>PG</option>
       <option value ='PG-13'>PG-13</option>
       <option value ='R'>R</option>
     </select>
-    <button>Update</button>
+    <br>
+    <button type="Submit" button type="button" class="btn btn-info">Update</button>
 </form>
 <%- include('../partials/footer') %>
-
