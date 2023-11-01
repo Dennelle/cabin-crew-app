@@ -15,6 +15,7 @@ async function show(req, res){
     try {
     console.log(req.params.id)
     const travelDocument = await Travel.findById(req.params.id)
+    .populate("user")
     console.log(travelDocument)
     res.render("travels/show", {travel: travelDocument});
     } catch(err){

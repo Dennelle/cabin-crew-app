@@ -15,9 +15,6 @@
 </head>
 
   <form class= "container" action="/travels/<%= travel._id %>?_method=PUT" method="POST">
-    <div>Name: <%= travel.user %> </div>
-    <div>Image: <%= travel.userAvatar %> </div>
-    <br>
     <h2>Edit Your Journey Here:</h2>
     <label>Country:</label>
     <br>
@@ -25,28 +22,29 @@
     <br>
     <label>City:</label>
     <br>
-    <textarea class="form-control" rows="1" id="comment" name="city" value=""><%= travel.city %></textarea>
+    <textarea class="form-control" rows="1" id="comment" name="city"><%= travel.city %></textarea>
     <br>
-    <label>Date Visited:
-    <input type="datetime-local" name="dateVisited" value="<%= travel.dateVisited.toISOString().slice(0,16) %>">
+    <label>Date Visited:</label>
+    <input class="form-control" rows="1" id="comment" type="datetime-local" name="dateVisited" value="<%= travel.dateVisited.toISOString().slice(0,16) %>">
     <br>
-    <div>Date Returned:
-    <input type="datetime-local" name="dateReturned" value="<%= travel.dateReturned.toISOString().slice(0,16) %>">
+    <label>Date Returned:</label>
+    <input class="form-control" rows="1" id="comment" type="datetime-local" name="dateReturned" value="<%= travel.dateReturned.toISOString().slice(0,16) %>">
     <br>
-    <div>Most Memorable Moments:</div>
-    <textarea class="form-control" rows="5" id="comment" name="memorableMoments" value=""><%= travel.memorableMoments %></textarea>
     <br>
-    <div>Lessons Learned:</div>
-    <textarea class="form-control" rows="5" id="comment" name="lessonsLearned" value=""><%= travel.lessonsLearned %></textarea>
+    <label>Most Memorable Moments:</label>
+    <textarea class="form-control" rows="5" id="comment" name="memorableMoments"><%= travel.memorableMoments %></textarea>
     <br>
-    <div>Advice:</div>
-    <textarea class="form-control" rows="5" id="comment" name="advice" value=""><%= travel.advice %></textarea>
+    <label>Lessons Learned:</label>
+    <textarea class="form-control" rows="5" id="comment" name="lessonsLearned"><%= travel.lessonsLearned %></textarea>
     <br>
-    <div>Number of Children:</div>
-    <textarea type="number" class="form-control" rows="1" id="comment" name="noChildren" value=""><%= travel.noChildren %></textarea>
+    <label>Advice:</label>
+    <textarea class="form-control" rows="5" id="comment" name="advice"><%= travel.advice %></textarea>
     <br>
-    <div>Age of Children:</div>
-    <textarea type="text" class="form-control" rows="1" id="comment" name="ageChildren" value=""><%= travel.ageChildren %></textarea>
+    <label>Number of Children:</label>
+    <textarea type="number" class="form-control" rows="1" id="comment" name="noChildren"><%= travel.noChildren %></textarea>
+    <br>
+    <label>Age of Children:</label>
+    <textarea type="text" class="form-control" rows="1" id="comment" name="ageChildren"><%= travel.ageChildren %></textarea>
     <br>
     <label for="kidFriendlyRating">Select Kid Friendly Rating:</label>
     <select class="form-control" rows="1" id="kidFriendlyRating" name="kidFriendlyRating">

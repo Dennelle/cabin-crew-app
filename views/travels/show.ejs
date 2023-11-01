@@ -17,8 +17,8 @@
 <div class="container">
 <% if (user) {%>
   <h3 class="text-center">Travel Review</h3>
-    <div>Name: <%= travel.userName %> </div>
-    <div>Image: <%= travel.userAvatar %> </div>
+    <div class="text-center"><img alt="avatar" src="<%= travel.user.avatar %>" referrerpolicy="no-referrer" class="img-rounded"></div>
+    <br>
     <div>Country: <%= travel.country %> </div>
     <div>City: <%= travel.city %></div>
     <div>Date Visited: <%= travel.dateVisited %> </div>
