@@ -51,13 +51,13 @@
 <br>
 <br>
 <% if (user) { %>
-  <form id="add-comment-form" method="POST" action="/travels/<%= travel._id %>/comments">
+  <form id="add-comment-form" method="POST" action="/travels/<%= travel._id %>/comments" class="text-center">
     <div class="mb-3 mt-3">
     <br>
     <textarea name="content" class="form-control" rows="5" id="comment"></textarea>
     <br>
-    <label>Plan To Visit?:</label>
-    <select name="futureVisit">
+    <label class="text-center">Please Indicate if You Plan To Visit:</label>
+    <select class="text-center" name="futureVisit">
         <option value ="Yes">Yes</option>
         <option value ="No">No</option>
         <option value="Undecided">Undecided</option>
@@ -69,7 +69,8 @@
   <h3>Please login to leave a comment</h3>
 <% } %>
 </div>
-
+<br>
+<br>
 
 
 <% if (travel.comments.length, user) { %>
