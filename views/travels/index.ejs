@@ -39,10 +39,11 @@
   </thead>
   <tbody>
     <% travelDocs.forEach(function(t) { %>
-      <% let newDate = t.dateVisited.toLocaleDateString() %>
       <tr>
         <td class="user"><img alt="avatar" src="<%= t.user.avatar %>" referrerpolicy="no-referrer" class="img-rounded"></td>
-        <td><%= newDate %></td>
+        <% if (t.dateVisited){%>
+          <td><%= t.dateVisited.toLocaleDateString() %></td>
+          <% } %>
         <td><%= t.country %></td>
         <td><%= t.city %></td>
         <td><%= t.kidFriendlyRating %></td>
