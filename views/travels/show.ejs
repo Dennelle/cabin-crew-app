@@ -17,21 +17,32 @@
 <div class="container">
 <% if (user) {%>
   <h3 class="text-center">Travel Review</h3>
-    <div class="text-center"><img alt="avatar" src="<%= travel.user.avatar %>" referrerpolicy="no-referrer" class="img-rounded"></div>
+    <div class="text-center"><img alt="avatar" src="<%= travel.user.avatar %>" referrerpolicy="no-referrer" class="img-rounded" ></div>
     <br>
+    <section class="text-center">
+    <div>Date Visited: <%= travel.dateVisited.toLocaleDateString() %> </div>
     <div>Country: <%= travel.country %> </div>
     <div>City: <%= travel.city %></div>
-    <div>Date Visited: <%= travel.dateVisited %> </div>
-    <div> Date Returned: <%= travel.dateReturned %> </div>
-    <div>Most Memorable Moments: <%= travel.memorableMoments %> </div>
-    <div> Lessons Learned: <%= travel.lessonsLearned %> </div>
-    <div> Advice: <%= travel.advice %> </div>
+    <div> Kid Friendly Rating: <%= travel.kidFriendlyRating %> </div>
+
+    <br>
+    <h4>Most Memorable Moments:</h4>
+    <div> <%= travel.memorableMoments %> </div>
+    <br>
+    <h4>Lessons Learned:</h4>
+    <div> <%= travel.lessonsLearned %> </div>
+    <br>
+    <h4>Advice:</h4>
+    <div> <%= travel.advice %> </div>
+    <br>
     <div> Number of Children: <%= travel.noChildren %> </div>
     <div> Age of Children: <%= travel.ageChildren %> </div>
-    <div> Kid Friendly Rating: <%= travel.kidFriendlyRating %> </div>
+
+
 <% } else { %>
     <h3>Please login to see travel diaries</h3>
 <% } %>
+</section>
 <br>
 
 
@@ -42,7 +53,6 @@
 <% if (user) { %>
   <form id="add-comment-form" method="POST" action="/travels/<%= travel._id %>/comments">
     <div class="mb-3 mt-3">
-      <label for="comment" class="form-label">Add Comment:</label>
     <br>
     <textarea name="content" class="form-control" rows="5" id="comment"></textarea>
     <br>

@@ -11,26 +11,12 @@
   <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     </style>
-    
-  <div class="jumbotron text-center">
-  <h1>Cabin Crew</h1>
-  <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
-</div>
-</head>
+  </head>
 
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Home</a>
-        <a class="navbar-brand" href="/auth/google">Login</a>
-
-      </div>
+  <nav>
+    <!-- <img src="https://i.imgur.com/L4f8g2o.jpg" alt="airplane logo" width="50" height="50"> -->
+    <a class="navbar-brand" href="/">Home</a>
+    <a class="navbar-brand" href="/auth/google">Login</a>
       <div class="collapse navbar-collapse" id="myNavbar">
         <% if (user) { %>
           <a class="navbar-brand" href="/travels/new">Travel Diary</a>
@@ -38,10 +24,9 @@
           <a class="navbar-brand" href="/logout">Logout</a>
             </div>
           <% } else { %>
-            <!-- <a class="navbar-brand" href="/auth/google">Login</a> -->
             <% } %>
-        </nav>
-      </div>
-    </div>
   </nav>
-  </body>
+  <div class="jumbotron text-center">
+    <h1>Cabin Crew</h1>
+    <p>Join our Cabin Crew and embark on a journey that celebrates family, exploration, and the beauty of our planet.</p>
+    </div>
