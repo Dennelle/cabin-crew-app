@@ -25,20 +25,52 @@ const commentSchema = new mongoose.Schema(
 const travelSchema = new mongoose.Schema(
     {
      user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-     userName: String,
-     userAvatar: String,
-     country: String,
-     city: String,
-     dateVisited: Date,
-     dateReturned: Date,
-     memorableMoments: String,
-     lessonsLearned: String,
-     advice: String,
-     noChildren: Number,
-     ageChildren: String,
+     userName:{
+      type: String,
+     },
+     userAvatar:{
+      type: String,
+     },
+     country: {
+      type: String,
+      required: true
+     },
+     city: {
+      type: String,
+      required: true
+     },
+     dateVisited: {
+      type: Date,
+      required: true
+     },
+     dateReturned: {
+      type: Date,
+      required: true
+     },
+     memorableMoments: {
+      type: String,
+      required: true
+     },
+     lessonsLearned:{
+      type: String,
+      required: true
+     },
+     advice: {
+      type: String,
+      required: true
+     },
+     noChildren: {
+      type: Number,
+      required: true
+     },
+     ageChildren: {
+      type: String,
+      required: true
+     },
      kidFriendlyRating: {
         type: String,
-        enum: ['G', 'PG', 'PG-13', 'R']
+        enum: ['G', 'PG', 'PG-13', 'R'],
+        required: true
      },
      comments: [commentSchema],
    });

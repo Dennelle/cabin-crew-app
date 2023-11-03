@@ -67,6 +67,7 @@ async function create(req, res) {
       const travel = await Travel.create(req.body);
       res.redirect(`/travels/${travel._id}`);
     } catch (err) {
+      console.log(err)
       // Probably want to go back to new
       res.redirect(`/travels/new`);
     }

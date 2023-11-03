@@ -1,35 +1,41 @@
-# passport-boilerplate
+## Cabin-Crew
+
+Before I had my son, I embarked on an incredible journey that took me to more than 28 countries, each filled with unique wonders and adventures waiting to be discovered. My passion for travel ran deep, and I was determined to pass on the love for exploration to my child, to open his eyes to the breathtaking beauty of the world.
+
+During this incredible journey, an idea took shape - an idea that would not only preserve the memories of our travels but also allow us to share them with fellow parents who shared the same passion. That idea blossomed into something extraordinary - an application that would come to be known as 'Cabin Crew.'
+
+Cabin Crew is a testament to the adventurous spirits of parents like myself who refuse to let parenthood hold them back from experiencing the world's wonders. It's a platform designed for parents who yearn to create and cherish unforgettable memories with their children while exploring new horizons.
+
+With Cabin Crew, we can immortalize our journeys in a way that's deeply personal and uniquely ours. It allows us to capture those precious moments, the laughter, the joy, and the amazement in a way that mere words could never fully convey. A picture is worth a thousand words, but within the Cabin Crew app, those words become priceless stories that will be treasured for a lifetime.
+
+So, let's soar to new heights, explore uncharted territories, and create a world of unforgettable memories with our children. Cabin Crew is not just an app; it's an inspiration for all parents who believe that the world is an incredible classroom and that every moment shared with our little ones is a treasure. Together, we'll continue to discover, explore, and inspire future generations with the wonders of our beautiful planet.
 
 
-This is your passport boilerplate.
+## Getting Started
 
-## Setup
-
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+To run cabin-crew on your local machine, click this link https://calm-pink-betta-tie.cyclic.app/
 
 
-#### Setup your git repo
-0. Setup your `.env` file and add all the things you need! (look at mongoose movies for reference!)
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"`
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin main` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin main`
 
-#### Setup your login (THE APP WON'T WORK until you do, no VIEWS are setup, or the landing route)
+## Features
+- User Authentication
 
-0. Setup your database connection string
-1. Then Setup Your User Model,
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
+- Embedded Video
 
-#### Make a commit
+- CRUD Operations for Blogs
 
-```git commit -m "setup up oauth and User Model"```
+- Comment System
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Node
+- Express
+- MongoDB
+- Mongoose
+- OAUTH
+
+## Credits
+This project was made possible thanks to the following technologies:
