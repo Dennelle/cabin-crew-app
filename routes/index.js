@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-// The root route renders our only view
+// The root route renders our only view - OPTIONAL
 // router.get('/', function(req, res, next) {
 //   res.redirect('/travels')
 // });

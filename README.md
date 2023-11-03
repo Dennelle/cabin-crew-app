@@ -29,14 +29,14 @@ To run cabin-crew on your local machine, click this link https://calm-pink-betta
 ## Technologies Used
 
 - HTML
-- CSS
+- Bootstrap
 - JavaScript
 - Node
 - Express
 - MongoDB
 - Mongoose
 - OAUTH
-- Bootstrap
+
 
 ## Credits
 This project was made possible thanks to the following technologies:
