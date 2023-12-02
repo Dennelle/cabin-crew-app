@@ -6,5 +6,3 @@ router.post('/travels/:id/comments', commentsCtrl.create)
 router.delete('/comments/:id', commentsCtrl.deleteComment)
 
 module.exports = router;
-
-

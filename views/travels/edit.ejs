@@ -13,8 +13,9 @@
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     </style>
 </head>
-
-  <form class= "container" action="/travels/<%= travel._id %>?_method=PUT" method="POST">
+<!-- ============ user will use this form to to update using the post method, which is similar to the delete method ========================= -->
+<!-- ============ the form will pull the data from travel document in the controller function ======================== -->
+<form class= "container" action="/travels/<%= travel._id %>?_method=PUT" method="POST">
     <h2>Edit Your Journey Here:</h2>
     <label>Country:</label>
     <br>

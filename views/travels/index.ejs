@@ -32,12 +32,11 @@
       <th>City</th>
       <th>Kid Friendly Rating</th>
       <th> More Info.</th>
-      <th></th>
-      <th></th>
-
+      <th> Instagram </th>
     </tr>
   </thead>
   <tbody>
+<!-- ============ this is the index page that displays basic information for the user ============== -->
     <% travelDocs.forEach(function(t) { %>
       <tr>
         <td class="user"><img alt="avatar" src="<%= t.user.avatar %>" referrerpolicy="no-referrer" class="img-rounded"></td>
@@ -46,6 +45,7 @@
         <td><%= t.city %></td>
         <td><%= t.kidFriendlyRating %></td>
         <td><button type="button" class="btn btn-outline-primary"><a href="/travels/<%= t._id %>">details</a></td></button>
+<!-- ========this option will appear if the user who user who left the travel review is logged in. They are able to modify or delete their review.============== -->
         <td><% if (user && user._id.equals(t.user._id)) { %><button type="button" class="btn btn-outline-primary" ><a href="/travels/<%= t._id %>/edit">modify</a></button>
           <% } %>
         </td>
@@ -60,6 +60,7 @@
   </tbody>
  </table>
  <% } else {%>
+<!-- ======= this will appear if there are no reviews on the page =========== -->
     <h5>No Travel Reviews</h5>
     <% } %>
   </div>

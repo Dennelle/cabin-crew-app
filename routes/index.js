@@ -37,5 +37,3 @@ router.get('/logout', function(req, res){
     res.redirect('/') // <---- UPDATE THIS TO WHERE YOU WANT THE USER TO GO AFTER LOGOUT
   });
 });
-
-module.exports = router;
