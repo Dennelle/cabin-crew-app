@@ -9,7 +9,7 @@ Cabin Crew is a dynamic and user-friendly full-stack web application designed to
 ![Comments](https://i.imgur.com/AK90pmG.png)
 
 **Access Cabin Crew:**
-   - Open your web browser and visit [Cabin Crew](https://calm-pink-betta-tie.cyclic.app/) to start creating your memories.
+   - Open your web browser and visit [Cabin Crew](https://calm-pink-betta-tie.cyclic.app/) to start creating your memories.✈️📖
 
 
 ## Key Features
@@ -38,8 +38,6 @@ Cabin Crew is a dynamic and user-friendly full-stack web application designed to
 
 - **CRUD Functionality for Comments:**
   Leave your mark on others' journeys by adding, viewing, updating, and deleting comments – ensuring a dynamic and collaborative environment.
-
-✈️📖
 
 ## Technologies Used
 
