@@ -1,49 +1,45 @@
-# Getting Started with Visual Studio Code
+# About Cabin Crew
 
-To set up and run Cabin Crew using Visual Studio Code, follow these steps:
+Cabin Crew is a dynamic and user-friendly full-stack web application designed to cater to your travel journaling needs. Whether you're an avid globetrotter or simply passionate about documenting your journeys, Cabin Crew provides a seamless platform for creating, reading, updating, and deleting travel journal entries. Additionally, the application fosters a sense of community by enabling users to engage with each other through comments, complete with comprehensive CRUD (Create, Read, Update, Delete) functionality.
 
-1. **Clone the Repository:**
-   - Open VSCode.
-   - Open the Terminal in VSCode (View > Terminal or `Ctrl` + `` ` `).
-   - Clone this repository to your local machine by running the following command:
-     ```bash
-     git clone https://github.com/your-username/Cabin-Crew.git
-     ```
+[Home Page](https://i.imgur.com/0Zg5uhE.png)
+[Create Entry](https://i.imgur.com/wfYVlui.png)
+[Read Entries](https://i.imgur.com/r52s2kS.png)
+[Read Entry](https://i.imgur.com/keftODd.png)
+[Comments](https://i.imgur.com/AK90pmG.png)
 
-2. **Navigate to the Project Directory:**
-   - Move into the project directory using the `cd` command:
-     ```bash
-     cd Cabin-Crew
-     ```
-
-3. **Install Dependencies:**
-   - Install the project dependencies by running the following command:
-     ```bash
-     npm install
-     ```
-
-4. **Start the Application:**
-   - Start the application with the following command:
-     ```bash
-     npm start
-     ```
-
-5. **Access Cabin Crew:**
+**Access Cabin Crew:**
    - Open your web browser and visit [Cabin Crew](https://calm-pink-betta-tie.cyclic.app/) to start creating your memories.
 
-6. **Open in VSCode:**
-   - If you want to open the project in VSCode directly, use the following command:
-     ```bash
-     code .
-     ```
-     This will open the project in a new VSCode window.
 
-## Features
+## Key Features
 
 - **User Authentication:** Securely log in and manage your account.
 - **Embedded Video:** Enhance your memories with embedded videos.
 - **CRUD Operations for Blogs:** Create, read, update, and delete your travel blogs.
 - **Comment System:** Engage with other parents by commenting on their adventures.
+
+## Other Features:
+
+- **Travel Journal Creation:**
+  Easily craft and publish detailed travel journal entries, capturing the essence of your adventures with rich text and multimedia elements.
+
+- **Interactive Reading Experience:**
+  Immerse yourself in the travel narratives of fellow users through an intuitive interface that ensures an engaging reading experience.
+
+- **Effortless Updates:**
+  Modify your travel journal entries effortlessly, allowing you to refine and enhance your stories as your experiences evolve.
+
+- **Streamlined Deletion:**
+  Manage your content seamlessly by removing entries that are no longer relevant, maintaining a curated collection of your travel memories.
+
+- **Community Interaction:**
+  Foster connections with other users through the ability to leave comments on their travel journal entries, creating a vibrant and supportive community.
+
+- **CRUD Functionality for Comments:**
+  Leave your mark on others' journeys by adding, viewing, updating, and deleting comments – ensuring a dynamic and collaborative environment.
+
+✈️📖
 
 ## Technologies Used
 
