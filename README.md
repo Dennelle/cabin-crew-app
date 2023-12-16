@@ -2,11 +2,11 @@
 
 Cabin Crew is a dynamic and user-friendly full-stack web application designed to cater to your travel journaling needs. Whether you're an avid globetrotter or simply passionate about documenting your journeys, Cabin Crew provides a seamless platform for creating, reading, updating, and deleting travel journal entries. Additionally, the application fosters a sense of community by enabling users to engage with each other through comments, complete with comprehensive CRUD (Create, Read, Update, Delete) functionality.
 
-[Home Page](https://i.imgur.com/0Zg5uhE.png)
-[Create Entry](https://i.imgur.com/wfYVlui.png)
-[Read Entries](https://i.imgur.com/r52s2kS.png)
-[Read Entry](https://i.imgur.com/keftODd.png)
-[Comments](https://i.imgur.com/AK90pmG.png)
+![Home Page](https://i.imgur.com/0Zg5uhE.png)
+![Create Entry](https://i.imgur.com/wfYVlui.png)
+![Read Entries](https://i.imgur.com/r52s2kS.png)
+![Read Entry](https://i.imgur.com/keftODd.png)
+![Comments](https://i.imgur.com/AK90pmG.png)
 
 **Access Cabin Crew:**
    - Open your web browser and visit [Cabin Crew](https://calm-pink-betta-tie.cyclic.app/) to start creating your memories.
