@@ -43,19 +43,6 @@ Cabin Crew is a dynamic and user-friendly full-stack web application designed to
 
 ## Technologies Used
 
-- HTML
-- Bootstrap
-- JavaScript
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- OAuth
-
-## Credits
-
-This project was made possible thanks to the following technologies:
-
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [Bootstrap](https://getbootstrap.com/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
