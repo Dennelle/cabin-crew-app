@@ -7,14 +7,11 @@ const passport = require('passport');
 //   res.redirect('/travels')
 // });
 
-//GET landing page.
+//landing page
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Now Boarding' });
 });
 
-
-
-// Google OAuth login route
 // Google OAuth login route
 // The client has to make an http get request to /auth/google
 // and the oauth process will start (Logging in with google)

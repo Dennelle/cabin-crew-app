@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+// require the controller that exports travels CRUD functions
 const travelsCtrl = require('../controllers/travels')
 const isLoggedIn = require('../config/auth')
 

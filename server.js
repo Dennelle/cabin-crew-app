@@ -1,20 +1,23 @@
 // load the env consts
 require('dotenv').config();
+// Load express and require modules
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
+
 // session middleware
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 const MongoStore = require('connect-mongo');
 
+//setup router for our routes folder.
 const indexRouter = require('./routes/index');
 const travelsRouter = require('./routes/travels');
 const commentsRouter = require('./routes/comments')
 
-// create the Express app
+// Create our express app
 const app = express();
 
 
@@ -25,9 +28,11 @@ require('./config/database');
 require('./config/passport');
 
 // view engine setup
+// Configure the app (app.set)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// Mount middleware (app.use)
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
@@ -55,6 +60,8 @@ app.use(passport.session());
 
 // Add this middleware BELOW passport middleware
 // this code is after passport because we want access to req.user, and before the response to the client(routes!)
+//This property is useful for exposing request-level information such as the request path name, authenticated user, user settings, and so on to templates rendered within the application.
+
 app.use(function (req, res, next) {
   // res.locals, <- this sets variables in every single ejs page in your views folder
   // in this case the variable is user (the key name on res.locals)
@@ -68,7 +75,9 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // mount all routes with appropriate base paths
-/* GET users listing. */
+// Mount routes
+// Then those routers are mounted in the middleware pipeline with the app.use
+// all actual path begins with /travels
 app.use('/', indexRouter);
 // embedded resources don't have a consitent name at the beginning
 // of each route, so we just always mount them as '/'
@@ -77,6 +86,8 @@ app.use('/', commentsRouter);
 
 // invalid request, send 404 page
 // catch 404 and forward to error handler
+// Define a "root" route directly on app
+//The res object represents the HTTP response that an Express app sends when it gets an HTTP request.
 app.use(function(req, res) {
   res.status(404).send('Cant find that!');
 });

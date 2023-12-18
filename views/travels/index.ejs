@@ -37,6 +37,8 @@
   </thead>
   <tbody>
 <!-- ============ this is the index page that displays basic information for the user ============== -->
+<!-- EJS (Embedded JavaScript) - A super cool templating language that, like the name says, embed JavaScript within the HTML! ejs is the file extension for the EJS view engine.-->
+
     <% travelDocs.forEach(function(t) { %>
       <tr>
         <td class="user"><img alt="avatar" src="<%= t.user.avatar %>" referrerpolicy="no-referrer" class="img-rounded"></td>
