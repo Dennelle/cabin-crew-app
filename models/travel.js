@@ -77,5 +77,5 @@ const travelSchema = new mongoose.Schema({
 
 
 
-//the travelSchema is compiled into the model and exported to be used in the controller module. Upon exporting, it creates a travel collection in the mongodbatlas db
+//the travelSchema is compiled into the model and exported to be used in the controller module. Upon exporting, it creates a travel collection in the mongodbatlasdb
 module.exports = mongoose.model("Travel", travelSchema);

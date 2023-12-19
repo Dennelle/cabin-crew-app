@@ -2,7 +2,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
 
-// configuring Passport!
+// configure passport - plug-in an instance of OAuth strategy user has logged in using OAuth.
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_SECRET,
@@ -30,11 +30,11 @@ passport.use(new GoogleStrategy({
   }
  )
 );
-
+// a method that will call after the verify callback to let Passport know what data we want to store in the session to identify user.
 passport.serializeUser(function(user, cb){
   cb(null, user._id)
 });
-
+// a method that Passport will call on each request when a user is logged in. What is returned will be assigned to req.user.
 passport.deserializeUser(async function(id, cb){
   try {
     const userDoc = await User.findById(id);

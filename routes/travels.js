@@ -4,6 +4,9 @@ const router = express.Router();
 const travelsCtrl = require('../controllers/travels')
 const isLoggedIn = require('../config/auth')
 
+
+//Express attempts to match routes to the request in the order that they are defined. New needs to be defined before show.
+
 router.get('/travels', isLoggedIn, travelsCtrl.index);
 router.post('/travels', isLoggedIn, travelsCtrl.create);
 router.delete('/travels/:id', isLoggedIn, travelsCtrl.delete);

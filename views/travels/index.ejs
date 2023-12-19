@@ -37,7 +37,7 @@
   </thead>
   <tbody>
 <!-- ============ this is the index page that displays basic information for the user ============== -->
-<!-- EJS (Embedded JavaScript) - A super cool templating language that, like the name says, embed JavaScript within the HTML! ejs is the file extension for the EJS view engine.-->
+<!-- EJS (Embedded JavaScript) - A templating language allows us to embed JS w/i the HTML! ejs is the file extension for the EJS view engine.-->
 
     <% travelDocs.forEach(function(t) { %>
       <tr>
@@ -47,7 +47,7 @@
         <td><%= t.city %></td>
         <td><%= t.kidFriendlyRating %></td>
         <td><button type="button" class="btn btn-outline-primary"><a href="/travels/<%= t._id %>">details</a></td></button>
-<!-- ========this option will appear if the user who user who left the travel review is logged in. They are able to modify or delete their review.============== -->
+<!-- ========this option will appear if the user who left the travel review is logged in. They are able to modify or delete their review.============== -->
         <td><% if (user && user._id.equals(t.user._id)) { %><button type="button" class="btn btn-outline-primary" ><a href="/travels/<%= t._id %>/edit">modify</a></button>
           <% } %>
         </td>

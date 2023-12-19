@@ -3,6 +3,7 @@ const Travel = require("../models/travel");
 const User = require("../models/user");
 
 // ============ export functions ===============
+//new and delete are reserved words but it can have an object property
 module.exports = {
   index,
   create,
@@ -78,6 +79,7 @@ async function create(req, res) {
     res.redirect(`/travels/${travel._id}`);
   } catch (err) {
     console.log(err);
+    //a redirect because the data changed
     res.redirect(`/travels/new`);
   }
 }
